@@ -3,10 +3,7 @@ require 'spec_helper'
 
 RSpec.feature "Beginning a fight", :type => :feature do
   scenario "Users enter their names" do
-    visit "/"
-    fill_in "player1", :with => "George"
-    fill_in "player2", :with => "Mal"
-    click_button "Save"
+    sign_in_and_play
     expect(page).to have_text("George vs. Mal! Fight!!!")
   end
 
