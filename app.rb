@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
+  attr_reader :player1, :player2
 
 enable :sessions
 
@@ -21,6 +22,9 @@ enable :sessions
     erb(:play)
   end
 
+   get '/attack' do
+   erb(:attack)
+   end
 
 
   run! if app_file == $0
