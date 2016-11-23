@@ -7,7 +7,7 @@ RSpec.feature "Beginning a fight", :type => :feature do
     fill_in "player1", :with => "George"
     fill_in "player2", :with => "Mal"
     click_button "Save"
-    expect(page).to have_text("George V Mal! Fight!!!")
+    expect(page).to have_text("George vs. Mal! Fight!!!")
   end
 
 end
