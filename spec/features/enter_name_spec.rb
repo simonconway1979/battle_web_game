@@ -1,6 +1,6 @@
 require 'spec_helper'
-RSpec.feature "enter name, submit form, see names on screen", :type => :feature do
-    scenario "Sets their battle name" do
+RSpec.feature "Sets their battle name", :type => :feature do
+    scenario "lands on battle page and enters their usernames" do
       visit "/"
 
       fill_in :player_1_name, with:  "Jack"
