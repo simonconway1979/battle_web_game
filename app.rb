@@ -12,7 +12,6 @@ enable :sessions
   end
 
   post '/names' do
-    p params
     $player1 = Player.new(params[:player1])
     $player2 = Player.new(params[:player2])
     redirect to('/play')
