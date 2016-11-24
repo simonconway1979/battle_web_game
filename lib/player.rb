@@ -1,19 +1,18 @@
+require 'game'
+
 class Player
 
-  attr_reader :name
+  attr_reader :name, :game
   attr_accessor :hitpoints
 
-  def initialize(name)
+  def initialize(name, game_klass=Game)
     @name = name
     @hitpoints = 60
+    @game = game_klass.new
   end
 
   def attacked
     self.hitpoints -= 10
-  end
-
-  def attack(player)
-      player.attacked
   end
 
 end

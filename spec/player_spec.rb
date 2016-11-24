@@ -28,13 +28,4 @@ describe Player do
       expect(player.hitpoints).to eq 50
     end
   end
-
-  context "when attack is called" do
-    it { is_expected.to respond_to(:attack).with(1).argument }
-
-    it "is expected to inflict damage on the other player" do
-      expect(player_2).to receive(:attacked)
-      player.attack(player_2)
-    end
-  end
 end
