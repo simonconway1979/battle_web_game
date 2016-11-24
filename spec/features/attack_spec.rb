@@ -17,9 +17,15 @@ RSpec.feature "Attack", :type => :feature do
 
   scenario "After a slap check players hitpoints ahve been reduced" do
     sign_in_and_play
-    click_button("Attack")
-    click_link("Wanna dash out some more pain?")
+    one_slap_round
     expect(page).to have_text("Mal: 80 HP")
+  end
+
+  scenario "We want to switch turns" do
+    sign_in_and_play
+    one_slap_round
+    one_slap_round
+    expect(page).to have_text("George: 80 HP")
   end
 
 end

@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require_relative 'lib/player.rb'
 require_relative 'lib/game.rb'
 
 
@@ -12,23 +11,21 @@ enable :sessions
   end
 
   post '/names' do
-    $player1 = Player.new(params[:player1])
-    $player2 = Player.new(params[:player2])
+    $game = Game.new(params[:player1], params[:player2])
     redirect to('/play')
   end
 
   get '/play' do
-    @player1 = $player1
-    @player2 = $player2
+    @game = $game
     erb(:play)
   end
 
-   get '/attack' do
-     @player1 = $player1
-     @player2 = $player2
-     @player1.game.attack(@player2)
-   erb(:attack)
-   end
+  get '/attack' do
+    @game = $game
+    @game.turn ? @game.attack(@game.player2) : @game.attack(@game.player1)
+    @game.switch_turn
+    erb(:attack)
+  end
 
 
   run! if app_file == $0
