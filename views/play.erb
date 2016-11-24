@@ -1,3 +1,6 @@
 <!-- <h1> <%= @player_1_name %> VS <%= @player_2_name %> successfully created </h1> -->
 <h1> <%= session[:player_1_name] %> VS <%= session[:player_2_name] %> successfully created </h1>
-<h2> Player 1 Hit points Player 2 points </h2>
+<h2> Player 2 hit points = 60</h2>
+<form action="/attack_successful" method="get">
+    <input type="submit" value="Attack!">
+</form>

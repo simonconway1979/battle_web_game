@@ -21,7 +21,9 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-
+  get '/attack_successful' do
+    erb(:attack_successful)
+  end
 
 run! if app_file == $0
 
