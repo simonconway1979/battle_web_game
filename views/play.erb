@@ -1,4 +1,4 @@
-<h1> <%= @player1 %> vs. <%= @player2 %>! Fight!!! </h1>
+<h1> <%= @player1.name %> vs. <%= @player2.name %>! Fight!!! </h1>
 
 <h2>
   <form action="/play">
@@ -10,9 +10,7 @@
   </form>
 </h2>
 
-<a href="/attack">Attack</a>
-
 <ul>
-  <li><%= @player2 %>: 20 HP</li>
-  <li><%= @player1 %>: 20 HP</li>
+  <li><%= @player2.name %>: <%= @player2.health %> HP</li>
+  <li><%= @player1.name %>: <%= @player2.health %> HP</li>
 </ul>
