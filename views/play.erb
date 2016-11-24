@@ -3,10 +3,16 @@
 <h2>
   <form action="/play">
     <input type="submit" value="View player 2's HP"/>
-    <%= @player2 %>: 20 HP
   </form>
 
   <form action="/attack">
     <input type="submit" value="Attack"/>
   </form>
 </h2>
+
+<a href="/attack">Attack</a>
+
+<ul>
+  <li><%= @player2 %>: 20 HP</li>
+  <li><%= @player1 %>: 20 HP</li>
+</ul>
