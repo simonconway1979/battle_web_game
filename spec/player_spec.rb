@@ -2,7 +2,9 @@ require 'player.rb'
 
 describe Player do
   subject(:player) { described_class.new(player_name) }
+  subject(:player_2) { described_class.new(player_2_name) }
   let(:player_name) { double :player_name }
+  let(:player_2_name) { double :player_2_name }
 
   context "when name is called" do
     it 'responds to name' do
@@ -20,13 +22,19 @@ describe Player do
      end
   end
 
-  context "when attack is called" do
+  context "when attacked is called" do
     it "reduces the hitpoints by 10" do
       player.attacked
       expect(player.hitpoints).to eq 50
     end
   end
 
+  context "when attack is called" do
+    it { is_expected.to respond_to(:attack).with(1).argument }
 
-
+    it "is expected to inflict damage on the other player" do
+      expect(player_2).to receive(:attacked)
+      player.attack(player_2)
+    end
+  end
 end

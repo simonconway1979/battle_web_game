@@ -12,4 +12,8 @@ class Player
     self.hitpoints -= 10
   end
 
+  def attack(player)
+      player.attacked
+  end
+
 end
