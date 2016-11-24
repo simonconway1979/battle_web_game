@@ -1,7 +1,6 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
-  attr_reader :player1, :player2
 
 enable :sessions
 
