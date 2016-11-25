@@ -1,4 +1,7 @@
-<meta http-equiv="refresh" content="4; URL='/play'" />
 
 <h1> Attack successful </h1>
-<h2> <%= @game.player_2.name %>'s hitpoints are now <%= @game.player_2.hitpoints %> </h2>
+<h2> <%= @game.current_player.name %>'s hitpoints are now <%= @game.current_player.hitpoints %> </h2>
+
+<form action="/play" method="get">
+    <input type="submit" value="Dish out more pain!!!">
+</form>
