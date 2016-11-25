@@ -27,7 +27,6 @@ class Battle < Sinatra::Base
   get '/attack_successful' do
     $player_1.game.attack($player_2)
     erb(:attack_successful)
-    # redirect '/play'
   end
 
 run! if app_file == $0
