@@ -2,6 +2,14 @@ require_relative 'player.rb'
 
 class Game
 
+  def self.create(player_1, player_2)
+    @game = Game.create(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
   attr_reader :players, :turn
 
 
